@@ -24,7 +24,6 @@ func main() {
 		inst, err := dispatcher.DoDispatch(balanceName, insts)
 		if err != nil {
 			fmt.Println("do balance err:", err)
-			fmt.Fprintf(os.Stdout, "do balance err\n")
 			continue
 		}
 		fmt.Println(inst)

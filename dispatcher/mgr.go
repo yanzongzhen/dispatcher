@@ -1,6 +1,8 @@
 package dispatcher
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type DispatchMgr struct {
 	allDispatcher map[string]Dispatcher
@@ -24,7 +26,6 @@ func DoDispatch(name string, insts []*Instance) (inst *Instance, err error) {
 		err = fmt.Errorf("Not found %s Dispatcher ", name)
 		return
 	}
-	fmt.Printf("use %s Dispatcher\n", name)
 	inst, err = Dispatcher.DoDispatch(insts)
 	return
 }
